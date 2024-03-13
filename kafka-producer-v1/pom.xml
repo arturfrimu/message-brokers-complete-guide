@@ -8,14 +8,15 @@
 
     <groupId>com.arturfrimu</groupId>
     <artifactId>kafka-producer-v1</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <packaging>jar</packaging>
 
     <parent>
         <groupId>com.arturfrimu.messagebrokers</groupId>
         <artifactId>message-brokers-complete-guide</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
