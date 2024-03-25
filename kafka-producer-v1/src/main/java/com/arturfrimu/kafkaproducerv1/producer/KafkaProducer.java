@@ -3,7 +3,12 @@ package com.arturfrimu.kafkaproducerv1.producer;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
+
+import java.util.concurrent.CompletableFuture;
 
 import static lombok.AccessLevel.PRIVATE;
 
@@ -18,5 +23,12 @@ public class KafkaProducer {
 
     public void sendMessage(String message) {
         kafkaTemplate.send(TOPIC, message);
+    }
+
+    public void sendMessage(String key, String message) {
+        CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(TOPIC, key, message);
+        future.whenComplete((result, throwable) -> {
+            System.out.println(result.getRecordMetadata().partition());
+        });
     }
 }
