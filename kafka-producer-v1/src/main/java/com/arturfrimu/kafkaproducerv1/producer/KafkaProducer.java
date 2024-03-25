@@ -1,16 +1,20 @@
 package com.arturfrimu.kafkaproducerv1.producer;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import static lombok.AccessLevel.PRIVATE;
+
 @Service
-public class KafkaProducerService {
+@RequiredArgsConstructor
+@FieldDefaults(level = PRIVATE, makeFinal = true)
+public class KafkaProducer {
 
     private static final String TOPIC = "nume-topic";
 
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
         kafkaTemplate.send(TOPIC, message);

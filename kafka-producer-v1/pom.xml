@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>kafka-producer-v1</name>
-    <description>kafka-producer-v1</description>
-
     <groupId>com.arturfrimu</groupId>
     <artifactId>kafka-producer-v1</artifactId>
     <version>0.0.1</version>
+
+    <name>kafka-producer-v1</name>
 
     <packaging>jar</packaging>
 

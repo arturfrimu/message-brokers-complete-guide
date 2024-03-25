@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KafkaProducerServiceTest {
+class KafkaProducerTest {
 
     @Autowired
-    private KafkaProducerService kafkaProducerService;
+    private KafkaProducer kafkaProducer;
 
     @Test
     void testSendMessage() {
-        kafkaProducerService.sendMessage("Hello World!");
+        kafkaProducer.sendMessage("Hello World!");
     }
 }
