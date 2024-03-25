@@ -19,7 +19,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
     public void run(String... args) throws InterruptedException {
         int totalMessages = 1000;
         for (int index = 0; index < totalMessages; index++) {
-            Thread.sleep(500);
+            Thread.sleep(200);
             kafkaProducer.sendMessage(String.valueOf(index), "Message %s".formatted(index));
         }
     }
