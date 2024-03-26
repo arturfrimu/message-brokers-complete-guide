@@ -23,6 +23,7 @@
     <modules>
         <module>kafka-producer-v1</module>
         <module>kafka-consumer-v1</module>
+        <module>rabbit-mq-v1</module>
     </modules>
 
     <dependencyManagement>
