@@ -34,3 +34,10 @@ spring:
     username: myuser
     password: mypassword
 ```
+
+```http request
+POST http://localhost:8080/api/v1/rabbit
+Content-Type: application/json
+
+"Hello world"
+```
